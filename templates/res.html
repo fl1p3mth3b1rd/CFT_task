@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+{% block content %}
+    {% if context.black and context.black %}
+        <h2>Количество черных пикселей: {{ context.black }}</h2>
+        <h2>Количество белых пикселей: {{ context.white }}</h2>
+        {% if context.res %}
+            <h2>Количество пикселей по цвету {{ context.hex_code }}: {{ context.res }}</h2>
+        {% elif context.error_message %}
+            <h2>Ошибка: {{ context.error_message }}</h2>
+        {% endif %}
+    {% else %}
+        <h2>Ошибка: {{ context.error_message }}</h2>
+    {% endif %}
+{% endblock %}
